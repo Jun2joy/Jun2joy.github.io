@@ -1,0 +1,24 @@
+<script lang="ts">
+   export let navigateTo: (destination: 'Home' | 'About') => void;
+   export let homePage: 'Home' | 'About' = 'Home';
+ </script>
+ 
+ <nav class="navbar navbar-expand-lg  navbar-dark mb-1" style="background-color: #E64626;">
+   <div class="container">
+     <a class="navbar-brand ms-2" href="/">SMA Extreme Heat Policy</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+           <a class="nav-link" href="/" on:click={e => {e.preventDefault(); navigateTo(homePage)}}>{homePage}</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link " href="/" on:click={e => {e.preventDefault(); navigateTo('About')}}>About</a>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+ 
